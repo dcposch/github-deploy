@@ -1,0 +1,17 @@
+
+# This is just an example of how to set up the Github deploy hook
+# You may want to add this to an existing configuration file
+
+upstream app_github_deploy {
+    server 127.0.0.1:9998;
+}
+server {
+    # Your configuration here!
+    server_name example.com;
+
+
+    location /github-push {
+        proxy_pass http://app_github_deploy/;
+        proxy_redirect off;
+    }
+}
