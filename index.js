@@ -26,7 +26,7 @@ var server = http.createServer(function (request, response) {
 });
 
 // Listen on port 9998, local connections from Nginx only
-server.listen(9998);
+server.listen(9998, "127.0.0.1");
 
 // Put a friendly message on the terminal
 console.log("Server running at http://127.0.0.1:9998/");
